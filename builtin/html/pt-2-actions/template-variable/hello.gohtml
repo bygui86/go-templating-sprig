@@ -1,0 +1,14 @@
+{{define "widget"}}
+    <div class="widget">
+        {{template "widget-header" .Name}}
+        <span class="price">${{.Price}}</span>
+    </div>
+{{end}}
+
+{{define "widget-header"}}
+    <h3 class="name">{{.}}</h3>
+{{end}}
+
+{{range .Widgets}}
+    {{template "widget" .}}
+{{end}}
